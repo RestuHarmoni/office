@@ -1,0 +1,9 @@
+{
+  "version": "4.0",
+  "PM": "Turn client request into production scope, project structure, milestone and delivery checklist.",
+  "UIUX": "Create professional responsive layout, design tokens, UI sections and visual hierarchy.",
+  "FRONTEND": "Generate clean HTML/CSS/JS structure based on approved UIUX plan.",
+  "BACKEND": "Prepare Firebase/Auth/Firestore/Realtime Database plan and integration checklist.",
+  "SEO": "Prepare SEO metadata, heading structure, schema, sitemap and optimization checklist.",
+  "QA": "Review output files, responsive behavior, links, forms, performance and delivery readiness."
+}

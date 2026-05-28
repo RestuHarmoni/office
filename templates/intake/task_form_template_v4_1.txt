@@ -1,0 +1,18 @@
+Client Name: 
+Company Name: 
+Business Category: 
+Phone: 
+Email: 
+Project Title: 
+Project Type: Corporate Website
+Priority: NORMAL
+Target Deadline: 
+Main Objective: 
+Design Style: Modern Professional
+Preferred Color: 
+Reference Website: 
+Pages: Home, About Us, Services, Contact
+Features: Responsive Design, WhatsApp Button, Contact Form, SEO Basic
+Assets: Logo Ready, Images Ready, Copywriting Ready
+Asset Link: 
+PM Notes: 

@@ -1,0 +1,11 @@
+{
+  "version": "4.0",
+  "templates": {
+    "Corporate Website": ["Home", "About", "Services", "Portfolio", "Testimonials", "Contact"],
+    "Ecommerce": ["Home", "Shop", "Product Detail", "Cart", "Checkout", "Order Status", "Admin Products"],
+    "Digital & Physical Ecommerce Platform": ["Home", "Ebook Store", "Physical Books", "Product Detail", "Cart", "Checkout", "Member Library", "Admin Orders"],
+    "Landing Page": ["Hero", "Problem", "Solution", "Benefits", "Pricing", "FAQ", "CTA"],
+    "Dashboard": ["Login", "Dashboard", "Analytics", "Records", "Settings", "Admin"],
+    "Client Portal": ["Login", "Project Tracker", "Upload Center", "Revision Request", "Delivery Center", "Invoice"]
+  }
+}

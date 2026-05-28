@@ -1,0 +1,82 @@
+{
+  "task_templates": {
+    "pm_analysis": {
+      "department": "SECTION_01_PM",
+      "priority": "HIGH",
+      "title": "PM Analysis & Project Scope",
+      "sop": "Analyze client request, define objective, identify deliverables, confirm project type and risk."
+    },
+    "uiux_layout": {
+      "department": "SECTION_02_UIUX",
+      "priority": "HIGH",
+      "title": "UIUX Website Layout",
+      "sop": "Prepare responsive layout, page structure, design direction, component flow and user journey."
+    },
+    "frontend_pages": {
+      "department": "SECTION_03_FRONTEND",
+      "priority": "HIGH",
+      "title": "Frontend Website Pages",
+      "sop": "Build responsive HTML/CSS/JS pages, reusable sections, navigation and mobile layout."
+    },
+    "backend_auth_database": {
+      "department": "SECTION_04_BACKEND",
+      "priority": "HIGH",
+      "title": "Backend Auth & Database",
+      "sop": "Prepare Firebase Auth, Firestore collections, validation and access path."
+    },
+    "backend_products_orders": {
+      "department": "SECTION_04_BACKEND",
+      "priority": "HIGH",
+      "title": "Backend Product & Order System",
+      "sop": "Prepare product database, cart/order structure, stock flow and admin order management."
+    },
+    "seo_basic": {
+      "department": "SECTION_06_SEO",
+      "priority": "MEDIUM",
+      "title": "Basic SEO Setup",
+      "sop": "Prepare meta title, meta description, sitemap direction, heading structure and schema notes."
+    },
+    "seo_product": {
+      "department": "SECTION_06_SEO",
+      "priority": "HIGH",
+      "title": "Product SEO Setup",
+      "sop": "Prepare product schema, category keyword structure, ecommerce metadata and index rules."
+    },
+    "qa_full": {
+      "department": "SECTION_05_QA",
+      "priority": "HIGH",
+      "title": "Full QA Review",
+      "sop": "Test responsive, links, forms, UI consistency, performance, SEO basics and final approval."
+    },
+    "qa_ecommerce": {
+      "department": "SECTION_05_QA",
+      "priority": "CRITICAL",
+      "title": "Ecommerce QA Review",
+      "sop": "Test product flow, cart/order, checkout path, mobile shopping flow, database write and delivery readiness."
+    },
+    "qa_dashboard": {
+      "department": "SECTION_05_QA",
+      "priority": "HIGH",
+      "title": "Dashboard QA Review",
+      "sop": "Test auth, realtime data, cards, filters, responsive dashboard and error states."
+    },
+    "inventory_delivery": {
+      "department": "SECTION_04_BACKEND",
+      "priority": "HIGH",
+      "title": "Inventory & Delivery Logic",
+      "sop": "Map physical/digital stock, delivery type, download/access delivery and order status."
+    },
+    "content_brand": {
+      "department": "SECTION_09_CONTENT",
+      "priority": "MEDIUM",
+      "title": "Brand Content Copy",
+      "sop": "Prepare brand story, service copy, CTA text, tone, tagline and section content."
+    },
+    "marketing_launch": {
+      "department": "SECTION_07_MARKETING",
+      "priority": "MEDIUM",
+      "title": "Marketing Launch Plan",
+      "sop": "Prepare launch angle, platform direction, offer message and simple campaign task."
+    }
+  }
+}

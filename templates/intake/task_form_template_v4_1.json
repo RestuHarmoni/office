@@ -1,0 +1,31 @@
+{
+  "clientName": "",
+  "companyName": "",
+  "businessType": "",
+  "phone": "",
+  "email": "",
+  "projectTitle": "",
+  "projectType": "Corporate Website",
+  "priority": "NORMAL",
+  "deadline": "",
+  "objective": "",
+  "designStyle": "Modern Professional",
+  "colors": "",
+  "reference": "",
+  "pages": [
+    "Home",
+    "About Us",
+    "Services",
+    "Contact"
+  ],
+  "features": [
+    "Responsive Design",
+    "WhatsApp Button",
+    "Contact Form",
+    "SEO Basic"
+  ],
+  "assets": [
+    "Logo Ready"
+  ],
+  "pmNotes": ""
+}
