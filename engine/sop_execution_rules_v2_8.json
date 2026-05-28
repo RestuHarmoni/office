@@ -1,0 +1,96 @@
+{
+  "version": "2.8.0",
+  "system": "OFFICE RESTU HARMONI AI DIGITAL OFFICE",
+  "engine": "Realtime SOP Execution Engine",
+  "status": "IMPLEMENTATION_READY",
+  "workflow": [
+    "CLIENT_SUBMIT",
+    "SYSTEM_ANALYZE",
+    "AUTO_TASK_GENERATE",
+    "AUTO_ROUTE_DEPARTMENT",
+    "AUTO_SOP_ASSIGN",
+    "QA_CHECKLIST",
+    "FINAL_DELIVERY"
+  ],
+  "departments": {
+    "SECTION_01_PM": "Project Manager AI",
+    "SECTION_02_UIUX": "UIUX AI",
+    "SECTION_03_FRONTEND": "Frontend AI",
+    "SECTION_04_BACKEND": "Backend AI",
+    "SECTION_05_QA": "QA AI",
+    "SECTION_06_SEO": "SEO AI",
+    "SECTION_07_MARKETING": "Marketing AI",
+    "SECTION_08_CLIENT_MANAGEMENT": "Client Management AI",
+    "SECTION_09_CONTENT": "Content AI",
+    "SECTION_10_ARCHIVE": "Archive AI"
+  },
+  "status_flow": [
+    "PENDING",
+    "IN_PROGRESS",
+    "BLOCKED",
+    "QA_REVIEW",
+    "APPROVED",
+    "DELIVERED"
+  ],
+  "project_type_rules": {
+    "Corporate Website": [
+      "pm_analysis",
+      "uiux_layout",
+      "frontend_pages",
+      "seo_basic",
+      "qa_full"
+    ],
+    "Ecommerce": [
+      "pm_analysis",
+      "uiux_product_flow",
+      "frontend_shop",
+      "backend_products_orders",
+      "seo_product",
+      "qa_ecommerce"
+    ],
+    "Digital & Physical Ecommerce Platform": [
+      "pm_analysis",
+      "uiux_product_flow",
+      "frontend_shop",
+      "backend_products_orders",
+      "inventory_delivery",
+      "seo_product",
+      "qa_ecommerce"
+    ],
+    "Dashboard": [
+      "pm_analysis",
+      "uiux_dashboard",
+      "frontend_dashboard",
+      "backend_auth_database",
+      "qa_dashboard"
+    ],
+    "Landing Page": [
+      "pm_analysis",
+      "uiux_landing",
+      "frontend_landing",
+      "seo_conversion",
+      "qa_landing"
+    ],
+    "Mobile App": [
+      "pm_analysis",
+      "uiux_app_flow",
+      "frontend_app",
+      "backend_auth_database",
+      "qa_app"
+    ],
+    "Branding": [
+      "pm_analysis",
+      "brand_identity",
+      "content_brand",
+      "marketing_launch",
+      "qa_brand"
+    ],
+    "SEO": [
+      "pm_analysis",
+      "seo_audit",
+      "seo_keyword",
+      "seo_technical",
+      "qa_seo"
+    ]
+  }
+}

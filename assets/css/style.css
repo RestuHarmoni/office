@@ -1,0 +1,685 @@
+
+:root{
+  --bg:#060914;--bg2:#0f172a;--panel:#0f172a;--card:#111827;--card2:#172033;
+  --line:rgba(255,255,255,.09);--line2:rgba(148,163,184,.18);
+  --text:#f8fafc;--muted:#94a3b8;--muted2:#64748b;
+  --primary:#3b82f6;--primary2:#06b6d4;--green:#22c55e;--red:#ef4444;--orange:#f59e0b;--purple:#a855f7;
+  --radius:22px;--sidebar:292px;--shadow:0 18px 60px rgba(0,0,0,.28);
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}body{margin:0;min-height:100vh;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:radial-gradient(circle at top left,rgba(59,130,246,.22),transparent 32%),radial-gradient(circle at bottom right,rgba(6,182,212,.14),transparent 34%),linear-gradient(180deg,#060914,#0b1020 58%,#060914);color:var(--text);overflow-x:hidden}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}button{min-height:42px}img,svg{max-width:100%}
+.login-body{min-height:100svh;display:grid;place-items:center;padding:clamp(16px,4vw,34px)}
+.login-card{width:min(460px,100%);background:linear-gradient(180deg,rgba(17,24,39,.92),rgba(15,23,42,.88));border:1px solid var(--line);border-radius:30px;padding:clamp(22px,5vw,34px);box-shadow:0 28px 90px rgba(0,0,0,.45);backdrop-filter:blur(16px)}
+.brand{display:flex;gap:14px;align-items:center;min-width:0}.logo{width:52px;height:52px;min-width:52px;border-radius:18px;background:linear-gradient(135deg,var(--primary),var(--primary2));display:grid;place-items:center;font-weight:950;box-shadow:0 0 28px rgba(59,130,246,.35);letter-spacing:-.03em}.brand h1{font-size:clamp(16px,2vw,21px);line-height:1.1;margin:0;white-space:normal}.brand p{margin:5px 0 0;color:var(--muted);font-size:13px}.login-title{margin:28px 0 5px;font-size:clamp(24px,5vw,30px);letter-spacing:-.04em}.sub{margin:0 0 18px;color:var(--muted);line-height:1.55}
+label{display:block;color:var(--muted);font-size:13px;margin:15px 0 7px}input,select,textarea{width:100%;background:#0b1222;border:1px solid var(--line2);color:var(--text);border-radius:15px;padding:13px 14px;outline:none;min-height:46px}input:focus,select:focus,textarea:focus{border-color:rgba(59,130,246,.72);box-shadow:0 0 0 4px rgba(59,130,246,.12)}textarea{min-height:110px;resize:vertical}.btn{border:0;border-radius:15px;padding:12px 16px;background:linear-gradient(135deg,var(--primary),#2563eb);color:white;font-weight:850;cursor:pointer;transition:.18s;display:inline-flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 12px 28px rgba(37,99,235,.18);white-space:nowrap}.btn:hover{transform:translateY(-1px);filter:brightness(1.08)}.btn.green{background:linear-gradient(135deg,var(--green),#16a34a);box-shadow:0 12px 28px rgba(34,197,94,.15)}.btn.red{background:linear-gradient(135deg,var(--red),#dc2626);box-shadow:0 12px 28px rgba(239,68,68,.15)}.btn.orange{background:linear-gradient(135deg,var(--orange),#d97706);box-shadow:0 12px 28px rgba(245,158,11,.15)}.btn.ghost{background:#0b1222;border:1px solid var(--line2);color:var(--text);box-shadow:none}.btn.small{min-height:34px;padding:8px 11px;border-radius:12px;font-size:12px}.full{width:100%;margin-top:18px}.hint,.muted{color:var(--muted)}.hint{font-size:13px;margin-top:16px;line-height:1.55}.error{color:#fca5a5;font-size:13px;margin-top:12px;min-height:18px;line-height:1.45}
+.app{display:grid;grid-template-columns:var(--sidebar) minmax(0,1fr);min-height:100svh}.sidebar{background:linear-gradient(180deg,rgba(15,23,42,.96),rgba(17,24,39,.91));border-right:1px solid var(--line);padding:22px;position:sticky;top:0;height:100svh;backdrop-filter:blur(12px);z-index:10}.nav{display:grid;gap:8px;margin-top:28px}.nav a{padding:13px 14px;border-radius:15px;color:var(--muted);font-weight:760;border:1px solid transparent;transition:.16s}.nav a.active,.nav a:hover{background:rgba(59,130,246,.14);color:var(--text);border-color:rgba(59,130,246,.16)}.sidebar-footer{position:absolute;left:22px;right:22px;bottom:22px;color:var(--muted2);font-size:12px;line-height:1.5}.main{min-width:0;padding:clamp(18px,3vw,34px)}.topbar{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;margin-bottom:24px}.topbar h2{margin:0;font-size:clamp(25px,3.4vw,34px);letter-spacing:-.045em;line-height:1.05}.topbar p{margin:8px 0 0;color:var(--muted);line-height:1.55;max-width:720px}.grid{display:grid;gap:18px}.grid.cards{grid-template-columns:repeat(4,minmax(0,1fr))}.grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}.card{background:linear-gradient(180deg,rgba(17,24,39,.90),rgba(15,23,42,.86));border:1px solid var(--line);border-radius:var(--radius);padding:clamp(18px,2.2vw,24px);box-shadow:var(--shadow);min-width:0}.card h3{margin-top:0;letter-spacing:-.02em}.stat{font-size:clamp(30px,4vw,42px);font-weight:950;margin-top:8px;letter-spacing:-.05em}.badge{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;font-size:12px;font-weight:900;background:rgba(59,130,246,.15);color:#bfdbfe;line-height:1}.badge.green{background:rgba(34,197,94,.15);color:#bbf7d0}.badge.orange{background:rgba(245,158,11,.16);color:#fed7aa}.badge.red{background:rgba(239,68,68,.16);color:#fecaca}.badge.purple{background:rgba(168,85,247,.16);color:#e9d5ff}.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:16px}.table{width:100%;border-collapse:collapse;min-width:760px}.table th,.table td{text-align:left;padding:14px;border-bottom:1px solid var(--line);vertical-align:middle}.table th{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.04em}.actions{display:flex;gap:8px;flex-wrap:wrap}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.span2{grid-column:span 2}.panel-title{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:16px}.panel-title h3{margin:0}.kanban{display:grid;grid-template-columns:repeat(4,minmax(230px,1fr));gap:16px;overflow-x:auto;padding-bottom:4px;-webkit-overflow-scrolling:touch}.lane{background:rgba(11,18,34,.78);border:1px solid var(--line);border-radius:20px;padding:14px;min-height:245px}.lane h4{margin:0 0 12px;font-size:14px;color:#dbeafe}.task{background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:16px;padding:13px;margin-bottom:10px}.task p{line-height:1.45}.file-row{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:14px;border:1px solid var(--line);border-radius:16px;margin-bottom:10px;background:#0b1222}.notice{border:1px solid rgba(59,130,246,.25);background:rgba(59,130,246,.10);border-radius:18px;padding:14px;color:#dbeafe;line-height:1.6}.progress{height:9px;background:#0b1222;border:1px solid var(--line);border-radius:99px;overflow:hidden;min-width:120px}.progress span{display:block;height:100%;background:linear-gradient(90deg,var(--primary),var(--primary2));border-radius:99px}
+@media(max-width:1220px){.grid.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.grid.three{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:980px){.app{display:block}.sidebar{position:sticky;top:0;height:auto;min-height:0;padding:14px 16px;border-right:0;border-bottom:1px solid var(--line);box-shadow:0 18px 45px rgba(0,0,0,.28)}.sidebar .brand{align-items:center}.sidebar .logo{width:44px;height:44px;min-width:44px;border-radius:15px}.sidebar .brand h1{font-size:16px}.sidebar .brand p{font-size:12px}.nav{display:flex;gap:8px;margin-top:14px;overflow-x:auto;padding-bottom:4px;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch}.nav a{flex:0 0 auto;scroll-snap-align:start;padding:10px 12px;font-size:13px;border-radius:13px;background:rgba(255,255,255,.03)}.sidebar-footer{display:none}.main{padding:18px}.topbar{align-items:flex-start;flex-direction:column}.topbar .btn{width:100%;max-width:220px}.grid.cards,.grid.three{grid-template-columns:repeat(2,minmax(0,1fr))}.form-grid{grid-template-columns:1fr}.span2{grid-column:auto}.panel-title{align-items:flex-start;flex-direction:column}.table{min-width:680px}.kanban{grid-template-columns:repeat(4,270px)}}
+@media(max-width:640px){body{background:radial-gradient(circle at top,rgba(59,130,246,.20),transparent 32%),#060914}.login-card{border-radius:24px}.main{padding:14px}.topbar{margin-bottom:16px}.topbar .btn{max-width:none}.grid.cards,.grid.three{grid-template-columns:1fr;gap:12px}.card{border-radius:20px;padding:16px}.form-grid{gap:10px}.btn{width:100%;white-space:normal}.actions .btn{width:auto;flex:1 1 auto}.table{min-width:0;border-collapse:separate;border-spacing:0 10px}.table thead{display:none}.table tr{display:block;background:rgba(11,18,34,.72);border:1px solid var(--line);border-radius:16px;padding:10px;margin-bottom:12px}.table td{display:flex;justify-content:space-between;gap:14px;border-bottom:0;padding:8px 4px;text-align:right}.table td:before{content:attr(data-label);color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.04em;text-align:left;min-width:88px}.table-wrap{overflow:visible}.progress{min-width:110px}.file-row{align-items:stretch;flex-direction:column}.file-row .actions{width:100%}.file-row .actions .badge{align-self:flex-start}.kanban{grid-template-columns:1fr;overflow:visible}.lane{min-height:120px}.sidebar{padding:12px}.nav a{font-size:12px;padding:9px 11px}.brand{gap:10px}.logo{width:46px;height:46px;min-width:46px}.login-title{margin-top:24px}}
+@media(max-width:390px){.main{padding:12px}.card{padding:14px;border-radius:18px}.nav a{font-size:11px}.topbar h2{font-size:24px}.brand h1{font-size:15px}.brand p{font-size:11px}.logo{width:42px;height:42px;min-width:42px}.stat{font-size:30px}}
+
+/* v1.3 Department Workflow Upgrade */
+.eyebrow{display:inline-flex;margin-bottom:8px;color:#67e8f9;font-size:12px;font-weight:950;letter-spacing:.08em;text-transform:uppercase}.hero-flow{display:grid;grid-template-columns:minmax(0,320px) 1fr;gap:18px;align-items:center;margin:18px 0}.flow-strip{display:flex;gap:8px;flex-wrap:wrap}.flow-strip span{padding:10px 12px;border-radius:999px;background:rgba(59,130,246,.12);border:1px solid rgba(59,130,246,.20);font-size:12px;font-weight:850;color:#dbeafe}.dept-card h3{font-size:14px;color:#93c5fd;margin:12px 0 4px}.dept-card h4{font-size:18px;margin:0 0 10px}.dept-card{min-height:220px;display:flex;flex-direction:column}.dept-card .badge.green{margin-top:auto;align-self:flex-start}.metric{position:relative;overflow:hidden}.metric:after{content:"";position:absolute;right:-40px;top:-40px;width:120px;height:120px;border-radius:999px;background:rgba(59,130,246,.12)}
+@media(max-width:980px){.hero-flow{grid-template-columns:1fr}.dept-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:640px){.dept-grid{grid-template-columns:1fr!important}.hero-flow{margin:12px 0}.flow-strip span{width:100%;text-align:center}.card+.card,.card+section,section+section{margin-top:12px}}
+
+
+/* v1.4 RESTU HARMONI Branding Integration */
+.brand-logo{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);box-shadow:0 0 28px rgba(59,130,246,.20);overflow:hidden;padding:7px}
+.brand-logo-img{width:100%;height:100%;object-fit:contain;display:block;filter:drop-shadow(0 8px 18px rgba(0,0,0,.22))}
+.login-main-logo{display:block;width:min(290px,82%);margin:0 auto 22px;filter:drop-shadow(0 18px 38px rgba(59,130,246,.18))}
+.login-card .brand{justify-content:center;text-align:left;margin-top:2px}
+.login-card .brand .brand-logo{width:56px;height:56px;min-width:56px;border-radius:18px}
+.sidebar .brand-logo{width:58px;height:58px;min-width:58px;border-radius:18px}
+.sidebar .brand h1{font-weight:950;letter-spacing:-.035em}.sidebar .brand p{font-weight:780;letter-spacing:.08em;text-transform:uppercase}.nav a.active{background:linear-gradient(135deg,rgba(59,130,246,.22),rgba(6,182,212,.12));color:#fff;border-color:rgba(96,165,250,.28)}
+@media(max-width:980px){.sidebar .brand-logo{width:46px;height:46px;min-width:46px;border-radius:15px}.login-main-logo{width:min(250px,76%);margin-bottom:18px}}
+@media(max-width:640px){.login-card .brand{justify-content:flex-start}.login-main-logo{width:min(235px,82%)}.brand-logo{padding:6px}}
+
+
+/* =========================================================
+   RESTU HARMONI BRAND LAYOUT FIX v1.5
+   Purpose: use icon mark for compact areas, wordmark only where wide enough.
+   ========================================================= */
+.logo{background:none;box-shadow:none;letter-spacing:normal}
+.login-card{width:min(440px,100%);padding:clamp(20px,4vw,30px);overflow:hidden}
+.login-logo-wrap{display:flex;justify-content:center;align-items:center;margin:0 auto 20px;padding:14px 16px;border:1px solid rgba(255,255,255,.08);border-radius:22px;background:linear-gradient(180deg,rgba(15,23,42,.78),rgba(2,6,23,.62));box-shadow:inset 0 1px 0 rgba(255,255,255,.04),0 18px 40px rgba(0,0,0,.22)}
+.login-wordmark{display:block;width:min(310px,100%);height:auto;object-fit:contain;filter:drop-shadow(0 12px 24px rgba(6,182,212,.14))}
+.login-brand-title{text-align:center;margin:2px 0 22px}.login-brand-title h1{font-size:clamp(19px,4.8vw,25px);line-height:1.12;margin:0;letter-spacing:-.045em}.login-brand-title p{margin:7px 0 0;color:var(--muted);font-size:13px;line-height:1.35}.login-title{margin:0 0 5px}.login-card .sub{text-align:center}.login-card .hint{text-align:center;line-height:1.45}
+.app-brand{display:grid;grid-template-columns:52px minmax(0,1fr);gap:13px;align-items:center}.brand-mark{width:52px;height:52px;min-width:52px;border-radius:18px;display:grid;place-items:center;background:linear-gradient(180deg,rgba(15,23,42,.82),rgba(2,6,23,.58));border:1px solid rgba(255,255,255,.08);box-shadow:0 14px 30px rgba(0,0,0,.25),0 0 24px rgba(6,182,212,.10);overflow:hidden}.brand-mark img{width:100%;height:100%;object-fit:contain;display:block}.brand-text{min-width:0}.brand-text h1{font-size:18px;line-height:1.02;margin:0;font-weight:950;letter-spacing:-.04em;white-space:normal}.brand-text p{margin:6px 0 0;color:var(--muted);font-weight:850;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;white-space:normal}.sidebar{overflow:hidden}.nav{position:relative;z-index:1}.sidebar-footer{position:fixed;max-width:calc(var(--sidebar) - 44px)}
+.brand-logo,.brand-logo-img,.login-main-logo{display:none!important}
+@media(max-width:980px){.app-brand{display:flex;gap:10px}.brand-mark{width:42px;height:42px;min-width:42px;border-radius:14px}.brand-text h1{font-size:15px}.brand-text p{font-size:9.5px;letter-spacing:.09em}.sidebar{overflow:visible}.sidebar-footer{position:static}.login-logo-wrap{padding:12px 14px;border-radius:20px}.login-wordmark{width:min(280px,100%)}}
+@media(max-width:640px){.login-body{padding:14px}.login-card{border-radius:24px;padding:20px}.login-logo-wrap{margin-bottom:16px;padding:10px 12px}.login-wordmark{width:min(255px,100%)}.login-brand-title{margin-bottom:18px}.app-brand{min-width:190px}.nav{margin-top:12px}.nav a{white-space:nowrap}.sidebar{padding:12px}.topbar h2{line-height:1.08}}
+@media(max-width:390px){.login-card{padding:18px 15px}.login-wordmark{width:min(235px,100%)}.login-brand-title h1{font-size:19px}.brand-mark{width:39px;height:39px;min-width:39px}.brand-text h1{font-size:13.5px}.brand-text p{font-size:8.5px}.app-brand{min-width:176px}}
+
+
+/* =========================================================
+   RESTU HARMONI CLEAN HEADER BRANDING v1.6
+   Header uses the same horizontal wordmark as login.
+   Removes crowded text label from the header area.
+   ========================================================= */
+.topbar{
+  align-items:center;
+  gap:18px;
+  padding:16px 18px;
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:24px;
+  background:linear-gradient(180deg,rgba(17,24,39,.66),rgba(15,23,42,.46));
+  box-shadow:0 18px 45px rgba(0,0,0,.18);
+}
+.topbar-brandline{display:flex;align-items:center;gap:18px;min-width:0;flex:1}
+.topbar-wordmark-wrap{
+  width:clamp(170px,18vw,238px);
+  min-width:160px;
+  height:54px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:9px 12px;
+  border-radius:18px;
+  background:linear-gradient(180deg,rgba(2,6,23,.58),rgba(15,23,42,.34));
+  border:1px solid rgba(255,255,255,.08);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.04),0 12px 26px rgba(0,0,0,.18);
+  overflow:hidden;
+}
+.topbar-wordmark{display:block;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 8px 18px rgba(6,182,212,.10))}
+.topbar-copy{min-width:0}.topbar-copy h2{margin:0}.topbar-copy p{margin-top:7px}
+.topbar .eyebrow{display:none!important}
+@media(max-width:980px){
+  .topbar{padding:14px;border-radius:21px;align-items:stretch}
+  .topbar-brandline{width:100%;align-items:flex-start;flex-direction:column;gap:12px}
+  .topbar-wordmark-wrap{width:min(260px,100%);height:52px;min-width:0;align-self:flex-start}
+  .topbar .btn{align-self:flex-start}
+}
+@media(max-width:640px){
+  .topbar{gap:12px;padding:12px;border-radius:19px}
+  .topbar-wordmark-wrap{width:100%;height:50px;border-radius:16px}
+  .topbar-copy h2{font-size:23px}.topbar-copy p{font-size:13px;line-height:1.45}
+}
+
+
+/* =========================================================
+   RESTU HARMONI SIDEBAR BRANDING LAYOUT v1.7
+   Standard: one logo only. Header/topbar is clean; sidebar uses the login horizontal logo.
+   ========================================================= */
+:root{--sidebar:304px}
+.sidebar{overflow:hidden}
+.sidebar-wordmark-brand{
+  width:100%;
+  min-width:0;
+  display:flex!important;
+  align-items:center;
+  justify-content:center;
+  padding:13px 14px;
+  border-radius:22px;
+  background:linear-gradient(180deg,rgba(2,6,23,.62),rgba(15,23,42,.42));
+  border:1px solid rgba(255,255,255,.08);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.04),0 16px 34px rgba(0,0,0,.20),0 0 26px rgba(6,182,212,.07);
+  margin-bottom:22px;
+}
+.sidebar-wordmark{
+  display:block;
+  width:min(230px,100%);
+  height:auto;
+  max-height:58px;
+  object-fit:contain;
+  filter:drop-shadow(0 10px 20px rgba(6,182,212,.10));
+}
+.sidebar-wordmark-brand .brand-mark,.sidebar-wordmark-brand .brand-text{display:none!important}
+.topbar-wordmark-wrap,.topbar-wordmark{display:none!important}
+.topbar-brandline{gap:0}.topbar-copy{width:100%}
+.topbar{
+  align-items:center;
+  justify-content:space-between;
+  min-height:84px;
+}
+.topbar-copy h2{font-size:clamp(25px,3.1vw,34px)}
+.nav{margin-top:0}
+.sidebar-footer{position:absolute;max-width:none}
+@media(max-width:980px){
+  :root{--sidebar:292px}
+  .sidebar{overflow:visible}
+  .sidebar-wordmark-brand{width:min(320px,100%);margin:0 auto 14px;padding:10px 12px;border-radius:19px}
+  .sidebar-wordmark{width:min(250px,100%);max-height:52px}
+  .topbar{min-height:0;align-items:stretch}
+  .topbar-brandline{flex-direction:column;width:100%}
+  .topbar-copy h2{font-size:clamp(24px,5.5vw,30px)}
+  .sidebar-footer{position:static}
+}
+@media(max-width:640px){
+  .sidebar-wordmark-brand{width:100%;padding:9px 10px;border-radius:17px;margin-bottom:12px}
+  .sidebar-wordmark{width:min(240px,100%);max-height:48px}
+  .topbar{padding:13px;border-radius:19px;gap:12px}
+  .topbar-copy h2{font-size:23px;line-height:1.08}
+}
+@media(max-width:390px){
+  .sidebar-wordmark{width:min(218px,100%)}
+  .topbar-copy h2{font-size:22px}
+}
+
+
+/* =========================================================
+   OFFICE RESTU HARMONI v1.8 — Premium Login & Clean SaaS UI
+   ========================================================= */
+.login-body{
+  display:grid;
+  place-items:center;
+  min-height:100svh;
+  padding:clamp(18px,4vw,42px);
+}
+.premium-login-card{
+  width:min(430px,100%);
+  text-align:center;
+  padding:clamp(24px,5vw,36px);
+  border-radius:32px;
+}
+.premium-login-logo{
+  margin:0 auto 24px;
+  width:100%;
+  max-width:330px;
+  padding:16px 18px;
+}
+.premium-login-card .login-title{
+  text-align:center;
+  margin:0 0 6px;
+  font-size:clamp(25px,5vw,31px);
+}
+.premium-login-card .sub{
+  text-align:center;
+  margin:0 0 22px;
+  color:var(--muted);
+}
+.premium-login-card form{text-align:left}
+.premium-login-card .error{text-align:center}
+.premium-login-card label{margin-top:14px}
+.premium-login-card .btn.full{margin-top:20px}
+.login-brand-title,.premium-login-card .hint{display:none!important}
+.sidebar-footer{opacity:.72;letter-spacing:.02em}
+.topbar-copy p{max-width:620px}
+.hero-flow{display:grid;gap:18px}
+.flow-strip span{white-space:nowrap}
+.dept-card{position:relative;overflow:hidden;min-height:230px}
+.dept-card::after{content:"";position:absolute;inset:auto -40px -55px auto;width:120px;height:120px;border-radius:999px;background:rgba(59,130,246,.08);filter:blur(2px)}
+.dept-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}
+.dept-card h3{font-size:clamp(18px,2vw,22px);line-height:1.1;margin:0 0 10px;letter-spacing:-.035em}
+.dept-short{margin:0 0 13px;color:#dbeafe;font-weight:850;font-size:13px;letter-spacing:.01em}
+.dept-card .muted{line-height:1.55}
+.card h3{line-height:1.15}.metric .muted{margin-bottom:0}
+@media(max-width:980px){
+  .premium-login-card{border-radius:28px}
+  .premium-login-logo{max-width:300px;padding:13px 15px}
+}
+@media(max-width:640px){
+  .premium-login-card{padding:22px 18px;border-radius:24px}
+  .premium-login-logo{max-width:270px;margin-bottom:20px}
+  .premium-login-card .login-title{font-size:25px}
+  .premium-login-card .sub{font-size:13px;margin-bottom:18px}
+  .dept-card{min-height:0}
+}
+
+/* =========================================================
+   OFFICE RESTU HARMONI v1.9 — Smart Mobile/Tablet Navigation
+   Scope: mobile/tablet/iPhone/iPad only. Desktop menu remains unchanged.
+   ========================================================= */
+/* Cleaner sidebar logo: larger, no background frame */
+.sidebar-wordmark-brand{
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+  padding:4px 2px 20px!important;
+  border-radius:0!important;
+}
+.sidebar-wordmark{
+  width:min(258px,100%)!important;
+  max-height:72px!important;
+  filter:drop-shadow(0 12px 24px rgba(6,182,212,.12));
+}
+
+@media(max-width:980px){
+  /* Smart button navigation for tablet/iPad/mobile */
+  .sidebar{
+    padding:14px 14px 12px!important;
+    background:linear-gradient(180deg,rgba(15,23,42,.96),rgba(2,6,23,.92));
+  }
+  .sidebar-wordmark-brand{
+    width:100%!important;
+    margin:0 auto 12px!important;
+    padding:2px 4px 10px!important;
+  }
+  .sidebar-wordmark{
+    width:min(285px,72vw)!important;
+    max-height:78px!important;
+  }
+  .nav{
+    display:grid!important;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:9px!important;
+    overflow:visible!important;
+    margin-top:6px!important;
+    padding:0!important;
+  }
+  .nav a{
+    position:relative;
+    flex:none!important;
+    display:flex!important;
+    align-items:center;
+    justify-content:center;
+    min-height:46px;
+    padding:10px 9px!important;
+    border-radius:16px!important;
+    text-align:center;
+    white-space:normal!important;
+    font-size:12.5px!important;
+    line-height:1.1;
+    font-weight:900;
+    color:#dbeafe!important;
+    background:linear-gradient(180deg,rgba(255,255,255,.065),rgba(255,255,255,.025))!important;
+    border:1px solid rgba(255,255,255,.075)!important;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.05),0 10px 26px rgba(0,0,0,.16);
+  }
+  .nav a.active,
+  .nav a:hover{
+    color:#fff!important;
+    background:linear-gradient(135deg,rgba(59,130,246,.34),rgba(6,182,212,.16))!important;
+    border-color:rgba(96,165,250,.35)!important;
+    box-shadow:0 14px 32px rgba(37,99,235,.18),inset 0 1px 0 rgba(255,255,255,.08);
+  }
+  .topbar{
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr) auto;
+    align-items:start!important;
+    gap:12px!important;
+    padding:14px!important;
+    background:linear-gradient(180deg,rgba(17,24,39,.74),rgba(15,23,42,.56));
+    border:1px solid rgba(255,255,255,.065);
+    border-radius:22px;
+  }
+  .topbar-brandline,
+  .topbar-copy{min-width:0;width:100%!important;}
+  .topbar-copy h2{font-size:clamp(22px,4.6vw,29px)!important;}
+  .topbar-copy p{font-size:13px!important;margin-top:6px!important;}
+  .topbar > .btn.red,
+  #logoutBtn{
+    width:auto!important;
+    max-width:none!important;
+    min-width:0!important;
+    align-self:start;
+    border-radius:16px!important;
+    padding:11px 13px!important;
+    font-size:0!important;
+    line-height:1!important;
+    box-shadow:0 14px 30px rgba(239,68,68,.14);
+  }
+  .topbar > .btn.red::before,
+  #logoutBtn::before{
+    content:"⏻";
+    font-size:18px;
+    font-weight:950;
+  }
+}
+
+@media(max-width:640px){
+  .sidebar{padding:12px 12px 10px!important;}
+  .sidebar-wordmark{width:min(265px,80vw)!important;max-height:72px!important;}
+  .nav{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px!important;}
+  .nav a{min-height:44px;font-size:12px!important;border-radius:15px!important;}
+  .topbar{grid-template-columns:minmax(0,1fr) 46px;padding:13px!important;border-radius:20px!important;}
+  .topbar > .btn.red,#logoutBtn{width:46px!important;height:46px!important;padding:0!important;display:grid!important;place-items:center;}
+}
+
+@media(max-width:390px){
+  .sidebar-wordmark{width:min(238px,82vw)!important;max-height:66px!important;}
+  .nav a{min-height:42px;font-size:11.2px!important;padding:9px 7px!important;}
+  .topbar{grid-template-columns:minmax(0,1fr) 42px;}
+  .topbar > .btn.red,#logoutBtn{width:42px!important;height:42px!important;}
+}
+
+
+/* v1.10: Mobile/tablet smart nav includes Logout; desktop stays unchanged */
+.mobile-logout-btn{display:none;font:inherit;cursor:pointer;text-decoration:none}
+@media(min-width:981px){
+  .desktop-logout-btn{display:inline-flex!important}
+  .mobile-logout-btn{display:none!important}
+}
+@media(max-width:980px){
+  .topbar .desktop-logout-btn,#logoutBtn.desktop-logout-btn{display:none!important}
+  .nav .mobile-logout-btn{
+    display:grid!important;
+    place-items:center;
+    min-height:50px;
+    width:100%;
+    padding:12px 10px;
+    border-radius:17px;
+    border:1px solid rgba(239,68,68,.20);
+    background:linear-gradient(180deg,rgba(239,68,68,.14),rgba(127,29,29,.08));
+    color:#fecaca;
+    font-weight:900;
+    font-size:13px;
+    text-align:center;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.05),0 12px 24px rgba(0,0,0,.16);
+  }
+  .nav .mobile-logout-btn::before{
+    content:'⎋';
+    display:block;
+    font-size:18px;
+    line-height:1;
+    margin-bottom:3px;
+  }
+  .nav .mobile-logout-btn:hover{
+    border-color:rgba(248,113,113,.34);
+    background:linear-gradient(180deg,rgba(239,68,68,.22),rgba(127,29,29,.10));
+    color:#fff;
+    transform:translateY(-1px);
+  }
+}
+@media(max-width:640px){
+  .nav .mobile-logout-btn{min-height:44px;font-size:12px;border-radius:15px;padding:9px 7px}
+  .nav .mobile-logout-btn::before{font-size:16px;margin-bottom:2px}
+}
+@media(max-width:390px){
+  .nav .mobile-logout-btn{min-height:42px;font-size:11.2px}
+}
+
+
+/* =========================================================
+   OFFICE RESTU HARMONI v1.11 — Floating + Mobile Sidebar
+   Mobile/tablet/iPhone/iPad: sidebar is hidden until + is pressed.
+   Desktop/PC: original sidebar stays unchanged.
+   ========================================================= */
+.mobile-nav-fab,.mobile-nav-backdrop{display:none}
+
+@media(min-width:981px){
+  body{overflow:auto!important}
+  .sidebar{transform:none!important;visibility:visible!important;opacity:1!important}
+  .desktop-logout-btn{display:inline-flex!important}
+  .mobile-logout-btn{display:none!important}
+}
+
+@media(max-width:980px){
+  body.mobile-menu-open{overflow:hidden}
+  .app{display:block!important;min-height:100svh}
+  .main{padding-top:76px!important}
+
+  .sidebar{
+    position:fixed!important;
+    top:0!important;left:0!important;bottom:0!important;
+    width:min(326px,86vw)!important;
+    height:100svh!important;
+    min-height:100svh!important;
+    z-index:80!important;
+    padding:22px 18px 18px!important;
+    border-right:1px solid rgba(255,255,255,.085)!important;
+    border-bottom:0!important;
+    border-radius:0 28px 28px 0!important;
+    background:linear-gradient(180deg,rgba(15,23,42,.98),rgba(2,6,23,.96))!important;
+    box-shadow:34px 0 90px rgba(0,0,0,.45)!important;
+    transform:translateX(-106%)!important;
+    opacity:.98!important;
+    visibility:hidden!important;
+    transition:transform .28s ease,visibility .28s ease!important;
+    overflow-y:auto!important;
+    -webkit-overflow-scrolling:touch;
+  }
+  body.mobile-menu-open .sidebar{transform:translateX(0)!important;visibility:visible!important}
+
+  .mobile-nav-backdrop{
+    display:block;
+    position:fixed;inset:0;
+    z-index:70;
+    background:rgba(2,6,23,.62);
+    backdrop-filter:blur(7px);
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .24s ease;
+  }
+  body.mobile-menu-open .mobile-nav-backdrop{opacity:1;pointer-events:auto}
+
+  .mobile-nav-fab{
+    display:grid!important;
+    place-items:center;
+    position:fixed;
+    top:14px;left:14px;
+    width:52px;height:52px;
+    z-index:95;
+    border-radius:18px;
+    border:1px solid rgba(96,165,250,.30);
+    background:linear-gradient(135deg,rgba(59,130,246,.96),rgba(6,182,212,.82));
+    color:white;
+    font-size:31px;
+    line-height:1;
+    font-weight:800;
+    cursor:pointer;
+    box-shadow:0 18px 42px rgba(37,99,235,.34), inset 0 1px 0 rgba(255,255,255,.18);
+    transition:transform .18s ease, border-radius .18s ease, background .18s ease;
+  }
+  body.mobile-menu-open .mobile-nav-fab{
+    transform:rotate(45deg);
+    border-radius:999px;
+    background:linear-gradient(135deg,rgba(239,68,68,.96),rgba(245,158,11,.82));
+  }
+
+  .sidebar-wordmark-brand{
+    width:100%!important;
+    margin:0 auto 20px!important;
+    padding:0 4px 18px!important;
+    background:transparent!important;
+    border:0!important;
+    box-shadow:none!important;
+  }
+  .sidebar-wordmark{
+    width:min(278px,100%)!important;
+    max-height:78px!important;
+    object-fit:contain!important;
+  }
+
+  .nav{
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    gap:10px!important;
+    overflow:visible!important;
+    margin-top:0!important;
+    padding:0!important;
+  }
+  .nav a,
+  .nav .mobile-logout-btn{
+    display:flex!important;
+    align-items:center!important;
+    justify-content:flex-start!important;
+    width:100%!important;
+    min-height:50px!important;
+    padding:13px 15px!important;
+    border-radius:17px!important;
+    text-align:left!important;
+    white-space:nowrap!important;
+    font-size:14px!important;
+    font-weight:900!important;
+    line-height:1!important;
+    background:linear-gradient(180deg,rgba(255,255,255,.060),rgba(255,255,255,.025))!important;
+    border:1px solid rgba(255,255,255,.080)!important;
+    color:#dbeafe!important;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.05),0 12px 26px rgba(0,0,0,.13)!important;
+  }
+  .nav a.active,
+  .nav a:hover{
+    color:#fff!important;
+    background:linear-gradient(135deg,rgba(59,130,246,.34),rgba(6,182,212,.14))!important;
+    border-color:rgba(96,165,250,.34)!important;
+  }
+  .nav .mobile-logout-btn{
+    border-color:rgba(239,68,68,.22)!important;
+    background:linear-gradient(180deg,rgba(239,68,68,.14),rgba(127,29,29,.08))!important;
+    color:#fecaca!important;
+    cursor:pointer!important;
+  }
+  .nav .mobile-logout-btn::before{content:none!important}
+  .desktop-logout-btn,#logoutBtn.desktop-logout-btn,.topbar .desktop-logout-btn{display:none!important}
+  .sidebar-footer{display:block!important;position:static!important;margin-top:18px!important;padding:14px 2px 0!important;color:rgba(148,163,184,.82)!important}
+
+  .topbar{
+    display:block!important;
+    padding:18px 18px 18px 64px!important;
+    border-radius:24px!important;
+    background:linear-gradient(180deg,rgba(17,24,39,.72),rgba(15,23,42,.52));
+    border:1px solid rgba(255,255,255,.065);
+  }
+  .topbar-copy h2{font-size:clamp(23px,5vw,30px)!important}
+  .topbar-copy p{font-size:13px!important}
+}
+
+@media(max-width:640px){
+  .mobile-nav-fab{top:12px;left:12px;width:49px;height:49px;border-radius:17px;font-size:30px}
+  .main{padding-top:72px!important}
+  .sidebar{width:min(310px,88vw)!important;padding:20px 16px 16px!important;border-radius:0 24px 24px 0!important}
+  .sidebar-wordmark{width:min(258px,100%)!important;max-height:72px!important}
+  .nav a,.nav .mobile-logout-btn{min-height:48px!important;font-size:13.5px!important;border-radius:16px!important}
+  .topbar{padding:16px 16px 16px 60px!important;border-radius:22px!important}
+}
+
+@media(max-width:390px){
+  .mobile-nav-fab{width:46px;height:46px;font-size:28px}
+  .sidebar{width:min(292px,90vw)!important}
+  .sidebar-wordmark{width:min(236px,100%)!important;max-height:66px!important}
+  .nav a,.nav .mobile-logout-btn{min-height:46px!important;font-size:13px!important;padding:12px 13px!important}
+  .topbar{padding-left:56px!important}
+}
+
+
+/* =========================================================
+   OFFICE RESTU HARMONI v1.12 — Official Logo Pack + Menu Toggle
+   Uses restu_harmoni_official_logo_pack assets across login, sidebar, favicon and PWA.
+   Mobile/tablet: floating + replaced with clear Menu toggle button.
+   Desktop/PC layout remains unchanged.
+   ========================================================= */
+.login-wordmark,
+.sidebar-wordmark{
+  content:url('../assets/brand/restu-harmoni-official-logo.png');
+}
+.login-logo-wrap,
+.premium-login-logo{
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+  padding:0!important;
+  max-width:min(330px,86vw)!important;
+}
+.login-wordmark{
+  width:min(330px,86vw)!important;
+  max-height:220px!important;
+  object-fit:contain!important;
+  display:block!important;
+}
+.sidebar-wordmark-brand{
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+  padding:0!important;
+}
+.sidebar-wordmark{
+  width:min(215px,100%)!important;
+  max-height:210px!important;
+  object-fit:contain!important;
+  display:block!important;
+  margin:0 auto!important;
+}
+@media(min-width:981px){
+  .sidebar-wordmark-brand{margin:0 auto 22px!important;width:100%!important;}
+  .sidebar-wordmark{width:min(205px,100%)!important;max-height:205px!important;}
+}
+@media(max-width:980px){
+  .mobile-nav-fab{
+    width:auto!important;
+    min-width:92px!important;
+    height:46px!important;
+    padding:0 14px!important;
+    border-radius:999px!important;
+    display:inline-flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    gap:8px!important;
+    font-size:14px!important;
+    line-height:1!important;
+    font-weight:950!important;
+    letter-spacing:-.01em!important;
+    background:linear-gradient(135deg,rgba(15,23,42,.96),rgba(30,41,59,.90))!important;
+    border:1px solid rgba(96,165,250,.35)!important;
+    color:#f8fafc!important;
+    box-shadow:0 16px 40px rgba(0,0,0,.30),0 0 26px rgba(59,130,246,.16),inset 0 1px 0 rgba(255,255,255,.10)!important;
+    transform:none!important;
+  }
+  .mobile-nav-fab .toggle-icon{font-size:19px!important;line-height:1!important;display:inline-grid!important;place-items:center!important;width:20px!important;}
+  .mobile-nav-fab .toggle-text{font-size:13px!important;line-height:1!important;}
+  body.mobile-menu-open .mobile-nav-fab{
+    transform:none!important;
+    background:linear-gradient(135deg,rgba(239,68,68,.92),rgba(127,29,29,.82))!important;
+    border-color:rgba(248,113,113,.36)!important;
+    box-shadow:0 16px 40px rgba(0,0,0,.32),0 0 28px rgba(239,68,68,.16),inset 0 1px 0 rgba(255,255,255,.10)!important;
+  }
+  .topbar{padding-left:126px!important;}
+  .sidebar-wordmark-brand{margin:0 auto 18px!important;}
+  .sidebar-wordmark{width:min(238px,100%)!important;max-height:238px!important;}
+}
+@media(max-width:640px){
+  .mobile-nav-fab{top:12px!important;left:12px!important;min-width:86px!important;height:44px!important;padding:0 12px!important;}
+  .mobile-nav-fab .toggle-text{font-size:12.5px!important;}
+  .topbar{padding-left:112px!important;}
+  .sidebar-wordmark{width:min(220px,100%)!important;max-height:220px!important;}
+  .login-wordmark{width:min(300px,86vw)!important;max-height:200px!important;}
+}
+@media(max-width:390px){
+  .mobile-nav-fab{min-width:78px!important;height:42px!important;padding:0 10px!important;gap:6px!important;}
+  .mobile-nav-fab .toggle-text{font-size:12px!important;}
+  .topbar{padding-left:104px!important;}
+  .sidebar-wordmark{width:min(204px,100%)!important;max-height:204px!important;}
+}
+
+
+/* =========================================================
+   OFFICE RESTU HARMONI v2.1 — Realtime Command Center
+   Core: realtime task tracking, project command center,
+   department collaboration, notification and QA flow.
+   ========================================================= */
+.v2-command-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;align-items:start}.v2-status-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.v2-status-card{padding:16px;border-radius:22px;background:rgba(15,23,42,.48);border:1px solid rgba(255,255,255,.07)}.v2-status-card b{display:block;font-size:22px;margin-top:7px}.v2-status-card small{color:var(--muted);font-weight:750}.workflow-rail{display:grid;grid-template-columns:repeat(6,minmax(120px,1fr));gap:10px;overflow:auto;padding-bottom:4px}.workflow-step{border:1px solid rgba(255,255,255,.08);background:rgba(15,23,42,.46);border-radius:18px;padding:12px;min-height:88px}.workflow-step strong{display:block;font-size:13px}.workflow-step small{display:block;color:var(--muted);margin-top:8px;line-height:1.35}.activity-feed,.notification-feed,.delivery-feed{display:grid;gap:10px;max-height:460px;overflow:auto;padding-right:4px}.feed-item{border:1px solid rgba(255,255,255,.07);background:rgba(15,23,42,.45);border-radius:18px;padding:12px}.feed-item b{display:block;font-size:14px}.feed-item p{margin:6px 0 0;color:var(--muted);font-size:13px;line-height:1.45}.feed-item time{display:block;color:#64748b;font-size:11px;margin-top:8px}.task-board{display:grid;grid-template-columns:repeat(5,minmax(230px,1fr));gap:14px;overflow:auto;padding-bottom:10px}.kanban-lane{background:rgba(2,6,23,.30);border:1px solid rgba(255,255,255,.07);border-radius:24px;padding:12px;min-height:360px}.lane-title{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:12px}.lane-title h3{font-size:15px;margin:0}.lane-count{font-size:12px;color:var(--muted);font-weight:850}.task{border-radius:18px}.task-meta{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}.task-detail{font-size:13px;line-height:1.45;color:#cbd5e1}.command-actions{display:flex;gap:10px;flex-wrap:wrap}.timeline{position:relative;display:grid;gap:12px}.timeline::before{content:"";position:absolute;left:13px;top:8px;bottom:8px;width:1px;background:rgba(96,165,250,.25)}.timeline-item{position:relative;padding-left:36px}.timeline-dot{position:absolute;left:5px;top:4px;width:17px;height:17px;border-radius:99px;background:#3b82f6;box-shadow:0 0 0 5px rgba(59,130,246,.12)}.timeline-item b{display:block}.timeline-item p{margin:5px 0 0;color:var(--muted);font-size:13px}.collab-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.sop-chip{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.08);background:rgba(15,23,42,.44);padding:8px 10px;border-radius:999px;margin:4px;color:#dbeafe;font-size:12px;font-weight:800}.ai-role-row{display:grid;grid-template-columns:44px 1fr auto;gap:12px;align-items:center;border:1px solid rgba(255,255,255,.07);background:rgba(15,23,42,.44);border-radius:18px;padding:12px}.ai-avatar{width:44px;height:44px;border-radius:15px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(59,130,246,.30),rgba(6,182,212,.16));font-weight:950}.quick-note-form{display:grid;gap:12px}.quick-note-form textarea{min-height:92px}.mobile-nav-fab .toggle-icon{font-size:18px}.mobile-nav-fab .toggle-text{font-weight:900}
+@media(max-width:1180px){.v2-command-grid,.collab-grid{grid-template-columns:1fr}.v2-status-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.workflow-rail{grid-template-columns:repeat(6,180px)}}
+@media(max-width:980px){.task-board{grid-template-columns:repeat(5,250px)}.v2-status-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.workflow-step{min-height:78px}.command-actions .btn{flex:1;min-width:130px}.ai-role-row{grid-template-columns:40px 1fr}.ai-role-row .badge{grid-column:2}.ai-avatar{width:40px;height:40px}.mobile-nav-fab{border-radius:18px;padding:11px 14px;background:linear-gradient(135deg,#2563eb,#06b6d4);box-shadow:0 16px 38px rgba(2,132,199,.32)}}
+@media(max-width:640px){.v2-status-grid{grid-template-columns:1fr 1fr;gap:10px}.v2-status-card{padding:13px;border-radius:18px}.v2-status-card b{font-size:20px}.task-board{grid-template-columns:repeat(5,82vw)}.kanban-lane{border-radius:20px;padding:10px}.workflow-rail{grid-template-columns:repeat(6,160px)}.collab-grid{gap:14px}.activity-feed,.notification-feed,.delivery-feed{max-height:none}.mobile-nav-fab{left:14px;right:auto;bottom:14px}.topbar-copy p{max-width:100%}}
+
+
+/* =========================================================
+   OFFICE RESTU HARMONI v2.3 — Project Intake Center System
+   Adds usable project intake template and PM Command Center integration.
+   ========================================================= */
+.client-template-layout{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(310px,.75fr);gap:18px;align-items:start}.client-template-card{position:relative}.detailed-form{gap:15px}.section-label{display:flex;align-items:center;gap:10px;margin:8px 0 2px;padding:12px 14px;border-radius:18px;background:rgba(59,130,246,.10);border:1px solid rgba(96,165,250,.16);color:#dbeafe}.section-label span{display:grid;place-items:center;width:32px;height:32px;border-radius:12px;background:linear-gradient(135deg,rgba(59,130,246,.38),rgba(6,182,212,.20));font-weight:950}.section-label b{font-size:14px;letter-spacing:.01em}.checklist-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.checklist-grid label{display:flex;align-items:center;gap:9px;margin:0;padding:11px 12px;border:1px solid rgba(255,255,255,.08);background:rgba(15,23,42,.44);border-radius:15px;color:#dbeafe;font-weight:760;font-size:13px}.checklist-grid input{width:auto;min-height:auto;accent-color:#3b82f6}.client-form-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.client-form-actions .btn{width:auto}.intake-side-panel{position:sticky;top:22px}.timeline.compact .timeline-item p{font-size:12.5px}.success-msg{color:#bbf7d0;font-weight:800;margin:0;min-height:18px}.no-print .actions{justify-content:flex-end}
+@media(max-width:1180px){.client-template-layout{grid-template-columns:1fr}.intake-side-panel{position:static}.checklist-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){.checklist-grid{grid-template-columns:1fr}.section-label{border-radius:15px;padding:10px 12px}.client-form-actions .btn{width:100%}.no-print .actions{width:100%;justify-content:stretch}.no-print .actions .btn{flex:1}}
+@media print{body{background:#fff!important;color:#111827!important}.no-print,.sidebar,.mobile-nav-fab,.mobile-nav-backdrop,.topbar,#logoutBtn,.desktop-logout-btn{display:none!important}.app{display:block!important}.main{padding:0!important}.card,.client-template-card{box-shadow:none!important;border:0!important;background:#fff!important;color:#111827!important;padding:0!important}.form-grid{display:grid!important;grid-template-columns:1fr 1fr!important;gap:10px!important}.span2{grid-column:span 2!important}label{color:#111827!important;font-weight:700!important}input,select,textarea{background:#fff!important;color:#111827!important;border:1px solid #94a3b8!important;min-height:38px!important}.section-label{background:#f1f5f9!important;color:#111827!important;border:1px solid #cbd5e1!important}.checklist-grid{grid-template-columns:repeat(2,1fr)!important}.checklist-grid label{background:#fff!important;color:#111827!important;border:1px solid #cbd5e1!important}.printable-form{width:100%!important}.login-wordmark,.sidebar-wordmark{filter:none!important}}
+
+/* =========================================================
+   PROJECT PIPELINE ENGINE v2.6
+   Autonomous workflow base system + realtime pipeline monitor
+   ========================================================= */
+.pipeline-flow{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;margin-top:14px}.pipeline-node{position:relative;min-height:132px;padding:16px;border-radius:18px;background:linear-gradient(180deg,rgba(11,18,34,.86),rgba(15,23,42,.72));border:1px solid rgba(96,165,250,.16);box-shadow:inset 0 1px 0 rgba(255,255,255,.035)}.pipeline-node span{display:inline-flex;width:34px;height:34px;border-radius:12px;align-items:center;justify-content:center;background:rgba(59,130,246,.16);border:1px solid rgba(59,130,246,.25);color:#bfdbfe;font-size:12px;font-weight:950}.pipeline-node b{display:block;margin-top:12px;font-size:13px;letter-spacing:.02em}.pipeline-node small{display:block;color:var(--muted);line-height:1.45;margin-top:6px}.pipeline-layout{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(300px,.8fr);gap:18px;margin-top:18px}.pipeline-list{display:grid;gap:14px}.pipeline-project-card{padding:16px;border-radius:18px;background:rgba(11,18,34,.72);border:1px solid var(--line);display:grid;gap:13px}.pipeline-project-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.pipeline-project-head h4{margin:0 0 5px;font-size:17px}.pipeline-stage-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:7px}.pipeline-stage{height:8px;border-radius:999px;background:rgba(148,163,184,.22);overflow:hidden}.pipeline-stage.active{background:linear-gradient(135deg,var(--primary),var(--primary2));box-shadow:0 0 18px rgba(59,130,246,.22)}.pipeline-meta{display:flex;flex-wrap:wrap;gap:8px}.routing-rule{display:flex;gap:12px;align-items:flex-start;padding:12px;border:1px solid var(--line);border-radius:16px;background:rgba(11,18,34,.58);margin-bottom:10px}.routing-rule .ai-avatar{width:40px;height:40px;min-width:40px;border-radius:14px}.soft-line{border:0;border-top:1px solid var(--line);margin:18px 0}.actions.stacked{display:grid;gap:10px}.actions.stacked .btn{width:100%}
+@media(max-width:1180px){.pipeline-flow{grid-template-columns:repeat(3,minmax(0,1fr))}.pipeline-layout{grid-template-columns:1fr}.pipeline-stage-grid{grid-template-columns:repeat(6,1fr)}}
+@media(max-width:640px){.pipeline-flow{grid-template-columns:1fr}.pipeline-node{min-height:auto}.pipeline-project-head{flex-direction:column}.pipeline-stage-grid{grid-template-columns:repeat(3,1fr)}.pipeline-layout{gap:12px}.pipeline-project-card{padding:13px}.pipeline-meta .badge{width:100%;justify-content:center}}
+
+
+/* =========================================================
+   OFFICE RESTU HARMONI v3.2 — Master Sidebar + System Admin
+   ========================================================= */
+.system-tool-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:16px}
+.system-tool-card{display:block;padding:18px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(180deg,rgba(15,23,42,.82),rgba(17,24,39,.68));transition:.18s;min-height:128px}
+.system-tool-card:hover{transform:translateY(-2px);border-color:rgba(59,130,246,.32);background:rgba(59,130,246,.10)}
+.system-tool-card strong{display:block;font-size:17px;margin-bottom:9px;letter-spacing:-.02em}.system-tool-card span{display:block;color:var(--muted);line-height:1.5;font-size:13px}.system-tool-card.danger{border-color:rgba(239,68,68,.25);background:linear-gradient(180deg,rgba(127,29,29,.28),rgba(17,24,39,.70))}.system-tool-card.danger:hover{border-color:rgba(239,68,68,.55);background:rgba(239,68,68,.13)}
+.codebox{margin-top:12px;padding:14px 15px;border-radius:16px;border:1px solid var(--line2);background:#070b16;color:#cbd5e1;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace;font-size:12px;line-height:1.65;overflow:auto}
+@media(min-width:981px){.nav{max-height:calc(100svh - 150px);overflow-y:auto;padding-right:3px}.nav::-webkit-scrollbar{width:6px}.nav::-webkit-scrollbar-thumb{background:rgba(148,163,184,.22);border-radius:999px}.nav a{padding:11px 12px;font-size:13px}.sidebar-footer{display:none}}
+@media(max-width:980px){.system-tool-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){.system-tool-grid{grid-template-columns:1fr}.system-tool-card{min-height:0}.stat{font-size:clamp(25px,8vw,36px)}}
+
+/* V4.1 File-Based Project Intake */
+.file-intake-zone{border:1px dashed rgba(148,163,184,.45);border-radius:18px;padding:18px;background:rgba(15,23,42,.45);margin-bottom:18px}
+.file-intake-zone.dragover{border-color:#38bdf8;background:rgba(56,189,248,.08)}
+.file-intake-row{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:12px}
+.file-intake-row input[type=file]{flex:1;min-width:240px;padding:10px;border:1px solid rgba(148,163,184,.25);border-radius:12px;background:rgba(2,6,23,.5);color:#e5e7eb}
+.file-intake-preview{white-space:pre-wrap;max-height:220px;overflow:auto;border:1px solid rgba(148,163,184,.18);border-radius:14px;padding:12px;background:rgba(2,6,23,.55);font-size:13px;line-height:1.55;margin-top:12px}
+.parser-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:12px}
+.parser-pill{border:1px solid rgba(148,163,184,.18);border-radius:12px;padding:10px;background:rgba(15,23,42,.5)}
+.parser-pill b{display:block;font-size:12px;color:#94a3b8;margin-bottom:4px}
+.parser-pill span{color:#f8fafc}
+@media(max-width:760px){.parser-grid{grid-template-columns:1fr}.file-intake-row{display:block}.file-intake-row .btn{width:100%;margin-top:8px}}

@@ -1,0 +1,9 @@
+<svg width="900" height="260" viewBox="0 0 900 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="900" height="260" rx="32" fill="#0F172A"/>
+<defs><linearGradient id="g" x1="130" y1="60" x2="330" y2="205"><stop stop-color="#06B6D4"/><stop offset="0.55" stop-color="#3B82F6"/><stop offset="1" stop-color="#F59E0B"/></linearGradient></defs>
+<path d="M120 72h145c33 0 57 24 57 56v7c0 31-25 56-57 56h-53l55 45h-72l-51-43v43h-54V122h142c13 0 23 10 23 23s-10 23-23 23H174v-31h102c5 0 9-4 9-9s-4-9-9-9H120V72z" fill="url(#g)"/>
+<path d="M337 124l36 30-36 30V124z" fill="#F59E0B"/>
+<text x="410" y="120" fill="#F8FAFC" font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="800" letter-spacing="4">RESTU</text>
+<text x="410" y="178" fill="#06B6D4" font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="800" letter-spacing="4">HARMONI</text>
+<text x="414" y="218" fill="#94A3B8" font-family="Arial, Helvetica, sans-serif" font-size="20" letter-spacing="8">AI DIGITAL OFFICE</text>
+</svg>
