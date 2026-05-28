@@ -1,0 +1,146 @@
+<!doctype html><html lang="ms"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Project Intake Center - OFFICE RESTU HARMONI</title><link rel="stylesheet" href="assets/css/style.css">
+<link rel="icon" href="assets/brand/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/brand/restu-harmoni-icon-32.png">
+<link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0f172a"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="RESTU HARMONI"><meta name="application-name" content="RESTU HARMONI AI Digital Office"></head><body><button type="button" id="mobileNavFab" class="mobile-nav-fab" aria-label="Open menu" aria-expanded="false"><span class="toggle-icon">☰</span><span class="toggle-text">Menu</span></button><div id="mobileNavBackdrop" class="mobile-nav-backdrop" aria-hidden="true"></div><div class="app"><aside class="sidebar"><div class="brand app-brand sidebar-wordmark-brand"><img class="sidebar-wordmark" src="assets/brand/restu-harmoni-official-logo.png" alt="RESTU HARMONI"></div><nav class="nav"><a href="dashboard.html">Dashboard</a><a href="projects.html">Command Center</a><a class="active" href="project-intake-center.html">Project Intake</a><a href="tasks.html">Task Board</a><a href="departments.html">Departments</a><a href="sop-engine.html">SOP Engine</a><a href="project-pipeline-engine.html">Pipeline Engine</a><a href="automation-intelligence.html">Automation Layer</a><a href="live-command-center.html">Live Command Center</a><a href="realtime-task-board.html">Realtime Task Board</a><a href="ai-command-center.html">AI Command Center</a><a href="autonomous-execution-center.html">Autonomous Center</a><a href="ai-website-production-engine.html">AI Production Engine</a><a href="knowledge-base.html">Knowledge Base</a><a href="client-portal.html">Client Portal</a><a href="output.html">QA & Delivery</a><a href="system-admin.html">System Admin</a><a href="settings.html">Settings</a><button type="button" id="mobileLogoutBtn" class="mobile-logout-btn nav-logout" aria-label="Logout">Logout</button></nav><div class="sidebar-footer">AI Digital Office v2.5</div></aside><main class="main">
+<div class="topbar"><div class="topbar-brandline"><div class="topbar-copy"><h2>Project Intake Center</h2><p>Template kosong untuk kumpul detail client. Selepas lengkap, PM boleh terus generate project dan department task.</p></div></div><button id="logoutBtn" class="btn red desktop-logout-btn">Logout</button></div>
+<section class="client-template-layout">
+  <div class="card client-template-card printable-form" id="clientRequirementPrintable">
+    <div class="panel-title no-print"><div><h3>Client Project Requirement Form</h3><p class="muted">Isi selepas dapat detail daripada client. Boleh print blank form atau terus simpan ke Command Center.</p></div><div class="actions"><button type="button" class="btn ghost" id="printBlankBtn">Print Blank Form</button><button type="button" class="btn ghost" id="clearClientFormBtn">Clear</button></div></div>
+
+    <div class="file-intake-zone no-print" id="taskFileDropZone">
+      <div class="panel-title"><div><h3>Upload Task Form — AI Intake Reader V4.2</h3><p class="muted">Upload task form untuk auto isi Project Intake. Support: .txt, .md, .json, .csv, .pdf dan .docx. PDF/DOCX dibaca secara browser local menggunakan extractor V4.2; Firebase Storage masih optional.</p></div><span class="badge green">FILE-BASED INTAKE</span></div>
+      <div class="file-intake-row">
+        <input id="taskFileInput" type="file" accept=".txt,.md,.json,.csv,.pdf,.docx,.text,application/json,text/plain,text/markdown,text/csv,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+        <button type="button" class="btn" id="parseTaskFileBtn">Read & Auto Fill</button>
+        <button type="button" class="btn ghost" id="clearTaskFileBtn">Clear File Reader</button>
+      </div>
+      <p class="muted">Format cadangan dalam file: Client Name, Company, Project Title, Project Type, Priority, Objective, Design Style, Colors, Pages, Features, Deadline, PM Notes. PDF/DOCX yang mengandungi text jelas akan auto extract; scan image PDF perlukan OCR/API future.</p>
+      <div class="parser-grid" id="taskFileExtractGrid" style="display:none"></div>
+      <div class="file-intake-preview" id="taskFilePreview" style="display:none"></div>
+      <p id="taskFileMsg" class="success-msg"></p>
+    </div>
+    <form id="clientRequirementForm" class="form-grid detailed-form">
+      <div class="section-label span2"><span>01</span><b>Client Information</b></div>
+      <div><label>Client Name</label><input id="reqClientName" placeholder="Nama client / PIC" required></div>
+      <div><label>Company / Brand Name</label><input id="reqCompanyName" placeholder="Nama syarikat / brand" required></div>
+      <div><label>Business Category</label><select id="reqBusinessType">
+        <option>Islamic Bookstore</option>
+        <option>Restaurant / Cafe</option>
+        <option>Renovation Company</option>
+        <option>Aircond Service</option>
+        <option>Electrical Service</option>
+        <option>Real Estate</option>
+        <option>Plumbing Service</option>
+        <option>Car Rental</option>
+        <option>Construction Company</option>
+        <option>Beauty & Spa</option>
+        <option>Healthcare / Clinic</option>
+        <option>Education</option>
+        <option>Travel Agency</option>
+        <option>Event Management</option>
+        <option>Legal Firm</option>
+        <option>Finance</option>
+        <option>Automotive</option>
+        <option>Technology</option>
+        <option>Other</option>
+      </select></div>
+      <div><label>Phone / WhatsApp</label><input id="reqPhone" placeholder="01X-XXXXXXX"></div>
+      <div><label>Email</label><input id="reqEmail" type="email" placeholder="client@example.com"></div>
+      <div><label>Current Website / Social Media</label><input id="reqExistingWebsite" placeholder="URL jika ada"></div>
+
+      <div class="section-label span2"><span>02</span><b>Project Overview</b></div>
+      <div><label>Project Title</label><input id="reqProjectTitle" placeholder="Contoh: Corporate Website ABC Sdn Bhd" required></div>
+      <div><label>Project Type</label><select id="reqProjectType">
+          <optgroup label="Website">
+            <option>Corporate Website</option>
+            <option>Company Profile Website</option>
+            <option>Landing Page</option>
+            <option>Portfolio Website</option>
+          </optgroup>
+          <optgroup label="Ecommerce">
+            <option>Physical Ecommerce Website</option>
+            <option>Digital Ecommerce Platform</option>
+            <option>Digital & Physical Ecommerce Platform</option>
+            <option>Subscription Ecommerce Platform</option>
+          </optgroup>
+          <optgroup label="System">
+            <option>Dashboard System</option>
+            <option>Booking System</option>
+            <option>Membership System</option>
+            <option>Learning Management System</option>
+            <option>Custom Web System</option>
+          </optgroup>
+          <optgroup label="Mobile & Marketing">
+            <option>Mobile App</option>
+            <option>Hybrid Mobile App</option>
+            <option>Branding System</option>
+            <option>SEO Optimization</option>
+            <option>Marketing Campaign</option>
+          </optgroup>
+        </select></div>
+      <div><label>Priority</label><select id="reqPriority"><option>NORMAL</option><option>HIGH</option><option>URGENT</option></select></div>
+      <div><label>Target Deadline</label><input id="reqDeadline" type="date"></div>
+      <div class="span2"><label>Main Objective</label><textarea id="reqObjective" placeholder="Contoh: dapatkan lead WhatsApp, nampak lebih professional, jual produk online, booking appointment"></textarea></div>
+
+      <div class="section-label span2"><span>03</span><b>Design Direction</b></div>
+      <div><label>Design Style</label><select id="reqDesignStyle"><option>Modern Professional</option><option>Premium Corporate</option><option>Minimal Clean</option><option>Luxury</option><option>Dark Theme</option><option>Friendly & Bright</option><option>Futuristic AI</option></select></div>
+      <div><label>Preferred Color</label><input id="reqColors" placeholder="Contoh: black/gold, blue/white, dark blue"></div>
+      <div><label>Reference Website / Design Link</label><input id="reqReference" placeholder="URL rujukan design"></div>
+      <div><label>Font / Visual Preference</label><input id="reqFontStyle" placeholder="Contoh: corporate, modern, luxury, bold"></div>
+      <div class="span2"><label>Design Notes</label><textarea id="reqDesignNotes" placeholder="Detail konsep, mood, style, layout atau perkara yang client suka/tak suka"></textarea></div>
+
+      <div class="section-label span2"><span>04</span><b>Website Structure</b></div>
+      <div class="span2 checklist-grid">
+        <label><input type="checkbox" name="reqPages" value="Home"> Home</label>
+        <label><input type="checkbox" name="reqPages" value="About Us"> About Us</label>
+        <label><input type="checkbox" name="reqPages" value="Services"> Services</label>
+        <label><input type="checkbox" name="reqPages" value="Portfolio/Gallery"> Portfolio/Gallery</label>
+        <label><input type="checkbox" name="reqPages" value="Products"> Products</label>
+        <label><input type="checkbox" name="reqPages" value="Blog/Article"> Blog/Article</label>
+        <label><input type="checkbox" name="reqPages" value="Booking"> Booking</label>
+        <label><input type="checkbox" name="reqPages" value="Contact"> Contact</label>
+        <label><input type="checkbox" name="reqPages" value="Admin Panel"> Admin Panel</label>
+      </div>
+      <div class="span2"><label>Page / Section Notes</label><textarea id="reqPageNotes" placeholder="Senarai page tambahan, section homepage, atau flow website"></textarea></div>
+
+      <div class="section-label span2"><span>05</span><b>Features Required</b></div>
+      <div class="span2 checklist-grid">
+        <label><input type="checkbox" name="reqFeatures" value="Responsive Design"> Responsive Design</label>
+        <label><input type="checkbox" name="reqFeatures" value="WhatsApp Button"> WhatsApp Button</label>
+        <label><input type="checkbox" name="reqFeatures" value="Contact Form"> Contact Form</label>
+        <label><input type="checkbox" name="reqFeatures" value="Google Maps"> Google Maps</label>
+        <label><input type="checkbox" name="reqFeatures" value="SEO Basic"> SEO Basic</label>
+        <label><input type="checkbox" name="reqFeatures" value="Firebase Login"> Firebase Login</label>
+        <label><input type="checkbox" name="reqFeatures" value="Admin Dashboard"> Admin Dashboard</label>
+        <label><input type="checkbox" name="reqFeatures" value="Payment Gateway"> Payment Gateway</label>
+        <label><input type="checkbox" name="reqFeatures" value="Multi Language"> Multi Language</label>
+        <label><input type="checkbox" name="reqFeatures" value="Analytics Tracking"> Analytics Tracking</label>
+      </div>
+      <div class="span2"><label>Feature Notes</label><textarea id="reqFeatureNotes" placeholder="Detail fungsi khusus yang client minta"></textarea></div>
+
+      <div class="section-label span2"><span>06</span><b>Content & Assets</b></div>
+      <div class="span2 checklist-grid">
+        <label><input type="checkbox" name="reqAssets" value="Logo Ready"> Logo Ready</label>
+        <label><input type="checkbox" name="reqAssets" value="Images Ready"> Images Ready</label>
+        <label><input type="checkbox" name="reqAssets" value="Copywriting Ready"> Copywriting Ready</label>
+        <label><input type="checkbox" name="reqAssets" value="Video Ready"> Video Ready</label>
+        <label><input type="checkbox" name="reqAssets" value="Product Detail Ready"> Product Detail Ready</label>
+        <label><input type="checkbox" name="reqAssets" value="Need Content Help"> Need Content Help</label>
+      </div>
+      <div class="span2"><label>Asset Link / File Notes</label><textarea id="reqAssetNotes" placeholder="Google Drive link, nama file logo, screenshot, PDF, reference image atau nota bahan client"></textarea></div>
+
+      <div class="section-label span2"><span>07</span><b>PM Notes</b></div>
+      <div class="span2"><label>PM Summary / Internal Instruction</label><textarea id="reqPmNotes" placeholder="Nota Encik untuk PM AI: scope, risiko, cadangan pakej, deadline, issue penting"></textarea></div>
+      <div class="span2 client-form-actions no-print"><button class="btn" type="submit">Save Requirement & Generate Project</button><button class="btn ghost" type="button" id="saveRequirementOnlyBtn">Save Requirement Only</button></div><p id="clientRequirementMsg" class="span2 success-msg no-print"></p>
+    </form>
+  </div>
+  <aside class="card intake-side-panel no-print">
+    <h3>PM Intake Flow</h3>
+    <div class="timeline compact"><div class="timeline-item"><span class="timeline-dot"></span><b>1. Collect Details</b><p>Upload Task Form PDF/DOCX/TXT atau isi manual berdasarkan meeting/WhatsApp.</p></div><div class="timeline-item"><span class="timeline-dot"></span><b>2. Save Requirement</b><p>Data masuk Firestore collection project_intake.</p></div><div class="timeline-item"><span class="timeline-dot"></span><b>3. Generate Project</b><p>Project, tasks, logs dan notification auto created.</p></div></div>
+    <div class="notice">Tip: File reader V4.2 membaca TXT/JSON/CSV/PDF/DOCX secara local browser dahulu. Firebase Storage belum wajib untuk fasa ini.</div>
+    <h3>Recent Requirements</h3><div id="clientRequirementList" class="activity-feed"></div>
+  </aside>
+</section>
+</main></div><script src="assets/js/ui.js"></script><script type="module" src="assets/js/app.js"></script></body></html>

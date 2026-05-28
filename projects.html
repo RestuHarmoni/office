@@ -1,0 +1,40 @@
+<!doctype html><html lang="ms"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Project Command Center - OFFICE RESTU HARMONI</title><link rel="stylesheet" href="assets/css/style.css">
+<link rel="icon" href="assets/brand/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/brand/restu-harmoni-icon-32.png">
+<link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0f172a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="RESTU HARMONI">
+<meta name="application-name" content="RESTU HARMONI AI Digital Office"></head><body><button type="button" id="mobileNavFab" class="mobile-nav-fab" aria-label="Open menu" aria-expanded="false"><span class="toggle-icon">☰</span><span class="toggle-text">Menu</span></button><div id="mobileNavBackdrop" class="mobile-nav-backdrop" aria-hidden="true"></div><div class="app"><aside class="sidebar"><div class="brand app-brand sidebar-wordmark-brand"><img class="sidebar-wordmark" src="assets/brand/restu-harmoni-official-logo.png" alt="RESTU HARMONI"></div><nav class="nav"><a href="dashboard.html">Dashboard</a><a class="active" href="projects.html">Command Center</a><a href="project-intake-center.html">Project Intake</a><a href="tasks.html">Task Board</a><a href="departments.html">Departments</a><a href="sop-engine.html">SOP Engine</a><a href="project-pipeline-engine.html">Pipeline Engine</a><a href="automation-intelligence.html">Automation Layer</a><a href="live-command-center.html">Live Command Center</a><a href="realtime-task-board.html">Realtime Task Board</a><a href="ai-command-center.html">AI Command Center</a><a href="autonomous-execution-center.html">Autonomous Center</a><a href="ai-website-production-engine.html">AI Production Engine</a><a href="knowledge-base.html">Knowledge Base</a><a href="client-portal.html">Client Portal</a><a href="output.html">QA & Delivery</a><a href="system-admin.html">System Admin</a><a href="settings.html">Settings</a><button type="button" id="mobileLogoutBtn" class="mobile-logout-btn nav-logout" aria-label="Logout">Logout</button></nav><div class="sidebar-footer">AI Digital Office v2.5</div></aside><main class="main"><div class="topbar"><div class="topbar-brandline"><div class="topbar-copy"><h2>Project Command Center</h2><p>Create project manual, atau guna Project Intake untuk requirement form lengkap sebelum generate workflow.</p></div></div><button id="logoutBtn" class="btn red desktop-logout-btn">Logout</button></div>
+<section class="v2-command-grid"><div class="card"><div class="panel-title"><div><h3>Create Client Project</h3><p class="muted">Manual quick entry. Untuk intake lengkap, buka Project Intake.</p></div><div class="actions"><a class="btn ghost" href="project-intake-center.html">Open Project Intake</a><span class="badge green">Auto Workflow</span></div></div><form id="projectForm" class="form-grid"><div><label>Project Name</label><input id="projectName" required placeholder="Digital & Physical Ecommerce Platform"></div><div><label>Client Name</label><input id="clientName" required placeholder="Nama client / syarikat"></div><div><label>Project Type</label><select id="projectType">
+          <optgroup label="Website">
+            <option>Corporate Website</option>
+            <option>Company Profile Website</option>
+            <option>Landing Page</option>
+            <option>Portfolio Website</option>
+          </optgroup>
+          <optgroup label="Ecommerce">
+            <option>Physical Ecommerce Website</option>
+            <option>Digital Ecommerce Platform</option>
+            <option>Digital & Physical Ecommerce Platform</option>
+            <option>Subscription Ecommerce Platform</option>
+          </optgroup>
+          <optgroup label="System">
+            <option>Dashboard System</option>
+            <option>Booking System</option>
+            <option>Membership System</option>
+            <option>Learning Management System</option>
+            <option>Custom Web System</option>
+          </optgroup>
+          <optgroup label="Mobile & Marketing">
+            <option>Mobile App</option>
+            <option>Hybrid Mobile App</option>
+            <option>Branding System</option>
+            <option>SEO Optimization</option>
+            <option>Marketing Campaign</option>
+          </optgroup>
+        </select></div><div><label>Priority</label><select id="priority"><option>NORMAL</option><option>HIGH</option><option>URGENT</option></select></div><div><label>Due Date</label><input id="dueDate" type="date"></div><div><label>Package / Scope</label><select id="projectPackage"><option>STARTER WEBSITE</option><option>BUSINESS WEBSITE</option><option>ECOMMERCE</option><option>CUSTOM SYSTEM</option></select></div><div><label>Client Request</label><textarea id="clientRequest" placeholder="Contoh: website 5 page, WhatsApp button, mobile responsive, SEO asas"></textarea></div><div><label>PM Analysis</label><textarea id="pmAnalysis" placeholder="Scope, objective, deliverables, risk dan timeline"></textarea></div><div class="span2"><button class="btn">Create Project & Generate Workflow</button></div></form></div><div class="card"><h3>Project Timeline</h3><div class="timeline"><div class="timeline-item"><span class="timeline-dot"></span><b>PM Analysis</b><p>Project scope, client request and delivery expectation.</p></div><div class="timeline-item"><span class="timeline-dot"></span><b>Department Assignment</b><p>UIUX, Content, Frontend, Backend, SEO and QA tasks created.</p></div><div class="timeline-item"><span class="timeline-dot"></span><b>QA & Delivery</b><p>Output enters review queue before final delivery.</p></div></div></div></section>
+<section class="card"><div class="panel-title"><h3>Project Pipeline</h3><span class="badge green">Live Firestore</span></div><div id="projectsTable" class="table-wrap"></div></section>
+<section class="card"><div class="panel-title"><h3>Department Activity Log</h3><span class="badge purple">Collaboration</span></div><div id="activityFeed" class="activity-feed"></div></section>
+</main></div><script src="assets/js/ui.js"></script><script type="module" src="assets/js/app.js"></script></body></html>
